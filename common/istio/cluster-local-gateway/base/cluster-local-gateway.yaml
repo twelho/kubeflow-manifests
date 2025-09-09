@@ -204,9 +204,7 @@ spec:
           name: ingressgateway-ca-certs
           readOnly: true
       securityContext:
-        runAsGroup: 1337
         runAsNonRoot: true
-        runAsUser: 1337
       serviceAccountName: cluster-local-gateway-service-account
       volumes:
       - emptyDir: {}

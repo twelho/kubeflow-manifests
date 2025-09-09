@@ -30,6 +30,7 @@ cd $ISTIO_DIRECTORY
 
 echo "Generating CNI manifests (default)..."
 $ISTIOCTL manifest generate -f profile.yaml -f profile-overlay.yaml \
+  --set values.global.platform=openshift \
   --set components.cni.enabled=true \
   --set components.cni.namespace=kube-system > dump.yaml
 ./split-istio-packages -f dump.yaml
